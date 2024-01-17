@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.4">
+
+  <world name="default">
+    <physics type="ode">
+      <scene>
+        <ambient>0.4 0.4 0.4 1</ambient>
+        <background>0.7 0.7 0.7 1</background>
+        
+        <shadows>false</shadows>
+      </scene>
+      <ode>
+        <solver>
+          <type>world</type>
+          <friction_model>cone_model</friction_model>
+          <thread_position_correction>1</thread_position_correction>
+          <island_threads>4</island_threads>
+        </solver>
+        <constraints>
+          <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
+          <contact_surface_layer>0.0001</contact_surface_layer>
+        </constraints>
+        <mu>0.01</mu>
+		 	  <mu2>0.01</mu2>
+      </ode>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      
+      <gravity>0.0 0.0 -1.61</gravity>
+    </physics>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+  </world>
+</sdf>
